@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Password Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Password Generator</h1>
+            <p>Create strong and secure passwords</p>
+        </div>
+
+        <div class="content">
+            <div class="password-display" id="passwordDisplay">
+                Click generate to create password
+                <i class="fas fa-copy copy-icon" onclick="copyCurrentPassword()"></i>
+            </div>
+
+            <div class="options">
+                <div class="option">
+                    <input type="number" id="length" value="12" min="4" max="50">
+                    <label for="length">Password Length</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase">Include Uppercase Letters</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">Include Lowercase Letters</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">Include Symbols</label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="generate-btn" onclick="generatePassword()">
+                    <i class="fas fa-key"></i> Generate Password
+                </button>
+                <button class="clear-btn" onclick="clearHistory()">
+                    <i class="fas fa-trash"></i> Clear History
+                </button>
+            </div>
+
+            <div class="password-history">
+                <h2>Password History</h2>
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
